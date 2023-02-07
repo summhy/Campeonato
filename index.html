@@ -8,10 +8,17 @@
 </head>
 <body>
     <section class="campeonato">
-        <input type="text" id="nombreCampeonato">
-        <input type="submit" onclick="agregarCampeonato()">
+        <h1>Campeonato</h1>
+        <input type="text" id="nombreCampeonato" placeholder="Nombre Campeonato">
+        <input type="submit" onclick="agregarCampeonato()" id="submitCampeonato" value="Agregar Campeonato">
     </section>
 
+    <section class="equipos">
+        <h1>Equipos</h1>
+        <input type="text" id="nombreEquipo" placeholder="Nombre Equipo">
+        <input type="text" id="poblacionEquipo" placeholder="Nombre Poblacion">
+        <input type="submit" onclick="agregarEquipo()" id="submitEquipo" value="Agregar Equipo">
+    </section>
 
     
     <script src="./js/Campeonato.js"></script>  
