@@ -12,14 +12,14 @@ Campeonato.prototype.getEquipos =  function(){
 }
 
 Campeonato.prototype.existeJugadorCampeonato = function(rut){
-    this.equipos.foreach(equipo => {
-        this.equipo.getJugadores().foreach(jugador=>{
+    let flag = false
+    this.equipos.forEach(equipo => {
+        equipo.getJugadores().forEach(jugador=>{
             if( jugador.isJugador(rut)){
-                return jugador.isJugador(rut)
-            }
-              
+                flag= true
+            }   
         })
     });
-    return false;
+    return flag;
 
 }

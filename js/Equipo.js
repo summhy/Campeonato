@@ -5,7 +5,7 @@ function Equipo(nombre, poblacion){
 }
 
 Equipo.prototype.setJugadores = function(jugador){
-    if(jugador.edad >= 18){
+    if(jugador.edad() >= 18){
         this.jugadores.push(jugador)
         return true
     }else{
