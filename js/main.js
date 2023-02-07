@@ -1,6 +1,6 @@
 const nomCampeonato = document.querySelector("#nombreCampeonato");
 const nomEquipo = document.querySelector("#nombreEquipo");
-const nomPoblacion = document.querySelector("#nombrePoblacion");
+const nomPoblacion = document.querySelector("#poblacionEquipo");
 let campeonato;
 let equipo;
 
@@ -14,5 +14,6 @@ let equipo;
     equipo = new Equipo(nomEquipo.value, nomPoblacion.value)
     campeonato.setEquipo(equipo);
     console.log(campeonato);
+    document.querySelector("#submitEquipo").setAttribute("disabled", "");
 
  }
