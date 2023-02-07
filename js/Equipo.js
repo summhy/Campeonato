@@ -17,3 +17,9 @@ Equipo.prototype.setJugadores = function(jugador){
 Equipo.prototype.getJugadores = function(){
     return this.jugadores;
 }
+
+Equipo.prototype.limpiarCapitan =  function(){
+    this.jugadores.forEach(jugador=>{
+        jugador.setCapitan(false)  
+    })
+}

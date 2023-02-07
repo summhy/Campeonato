@@ -13,6 +13,10 @@ Jugador.prototype.setApellido=function(apellido){
     this.apellido = apellido;
 }
 
+Jugador.prototype.getRut= function(){
+    return this.rut;
+}
+
 Jugador.prototype.setNombreCompleto = function(nombre, apellido){
     this.setNombre(nombre);
     this.setApellido(apellido);
@@ -20,6 +24,10 @@ Jugador.prototype.setNombreCompleto = function(nombre, apellido){
 
 Jugador.prototype.isCapitan = function(){
     return this.capitan;
+}
+
+Jugador.prototype.setCapitan = function(capitan){
+    this.capitan = capitan;
 }
 
 Jugador.prototype.edad =  function(){

@@ -3,6 +3,8 @@ const nomEquipo = document.querySelector("#nombreEquipo");
 const nomPoblacion = document.querySelector("#poblacionEquipo");
 const rutJugador = document.querySelector("#rutJugador");
 const nacimientoJugador = document.querySelector("#nacimientoJugador");
+const esCapitan = document.querySelector("#inpCapitan");
+const listadoJugadores = document.querySelector("#listadoJugadores");
 let campeonato;
 let equipo;
 
@@ -28,11 +30,24 @@ let equipo;
     if(campeonato.existeJugadorCampeonato(rutJugador.value)){
         document.querySelector("#error").textContent ="Jugador Existe"
     }else{
-        let jugador1 =  new Jugador(rutJugador.value, nacimientoJugador.valueAsNumber)
-        if(!equipo.setJugadores(jugador1)){
+        let jugador = new Jugador(rutJugador.value, nacimientoJugador.valueAsNumber)
+        if(!equipo.setJugadores(jugador)){
             document.querySelector("#error").textContent ="Jugador no cumple edad"
+        }else{
+            console.log(esCapitan.checked)
+            if(esCapitan.checked){
+                equipo.limpiarCapitan();
+            }
+            jugador.setCapitan(esCapitan.checked);
+            mostrarJugadores()
         }
-        
     }
-   
+ }
+
+ function mostrarJugadores(){
+    listadoJugadores.innerHTML ="rut      capitan <br>";
+    equipo.jugadores.forEach(element => {
+        listadoJugadores.innerHTML += element.getRut() + 
+                                      ' ' + element.isCapitan() +'<br>';
+    });
  }
